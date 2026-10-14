@@ -1,5 +1,7 @@
-# Ultima Corsa — Un colpo nella metropolitana di Parigi
+# Ultima Corsa
 An interactive web-based strategy game where a master thief who just pulled off a museum heist in Paris must navigate the underground metro network, dodge the police, and escape before dawn!
+
+
 
 ## About the  Game
 Ultima Corsa is a comic-style and simple game. After stealing priceless artifacts (like the Mona Lisa or the Crown of Thorns), players must plan their escape route across the complex Paris metro graph.
@@ -9,6 +11,12 @@ Ultima Corsa is a comic-style and simple game. After stealing priceless artifact
 - Survive Events: Every stretch of the journey brings random events—from romantic couples blocking the platform to police checkpoints or finding hidden jewelry trunks.
 
 - Score & Leaderboard: Manage your loot, avoid getting caught, and compete for the top spot on the global leaderboard.
+
+![Home Page](img/Home.png)
+
+![Gameplay View](img/Play.png)
+
+![Leaderboard View](img/Leaderboard.png)
 
 ## Tech Stack
 - Frontend: React, React-Router, React-Bootstrap, Custom CSS.
