@@ -1,0 +1,44 @@
+.tract-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tract-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #1a2123;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    color: #dee3e6;
+}
+
+.tract-used {
+    opacity: 0.45;
+}
+
+.tract-text {
+    font-size: 0.9rem;
+}
+
+.tract-add {
+    flex-shrink: 0;
+    background-color: #56ddff;
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 3px 12px;
+    cursor: pointer;
+}
+
+.tract-add:disabled {
+    background-color: #3d494d;
+    color: #869397;
+    cursor: default;
+}

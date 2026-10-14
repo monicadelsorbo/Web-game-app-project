@@ -1,0 +1,74 @@
+.setup {
+    width: 68vw;
+    margin: 0 auto;
+    padding: 5px 12px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.setup-title {
+    color: #56ddff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    text-shadow: 3px 3px 0 #000;
+    margin: 0;
+    margin-bottom: -10px;
+}
+
+
+.setup-sub {
+    color: #e6ebee;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.setup-map {
+    width: 48vw;
+    background-color: #5b6ea8;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 12px;
+    margin-top: -10px;
+}
+
+.setup-btn {
+    background-color: #56ddff !important;
+    color: #000 !important;
+    border: 4px solid #000 !important;
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    padding: 10px 20px !important;
+    margin-top: 3px;
+}
+
+.setup-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.setup-btn:active {
+    filter: brightness(1.15);
+    transform: scale(1.08);
+}
+
+/* ===== Schermi piccoli ===== */
+@media (max-width: 900px) {
+    .setup {
+        width: 94vw;
+    }
+
+    .setup-map {
+        width: 82vw;
+    }
+
+    .setup-title {
+        font-size: 1.5rem;
+    }
+}

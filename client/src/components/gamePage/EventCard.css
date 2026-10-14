@@ -1,0 +1,98 @@
+.exec-side {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exec-card {
+    background-color: #1a2123;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    animation: exec-slam 0.4s cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+
+@keyframes exec-slam {
+    0% {
+        transform: scale(1.8) rotate(-7deg);
+        opacity: 0;
+    }
+
+    /* arriva grande e storta */
+    55% {
+        transform: scale(0.9) rotate(2deg);
+        opacity: 1;
+    }
+
+    /* impatto: si schiaccia */
+    75% {
+        transform: scale(1.05) rotate(-1deg);
+    }
+
+    /* piccolo rimbalzo */
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    /* si assesta */
+}
+
+.exec-card-route {
+    margin-bottom: 12px;
+}
+
+.exec-card-desc {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.exec-card-effect {
+    font-size: 1.6rem;
+}
+
+.exec-card-step {
+    color: #56ddff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.exec-card-effect.gain {
+    color: #22e0a0;
+}
+
+.exec-card-effect.loss {
+    color: #ff4d4d;
+}
+
+.exec-next {
+    align-self: flex-end;
+    background-color: #f99b44;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.exec-next:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.exec-card-waiting {
+    color: #7b8a95;
+    font-style: italic;
+    font-size: 1.2rem;
+    animation: none;
+}

@@ -1,0 +1,92 @@
+/* Schermata a tutto schermo che scorre da destra a sinistra (intro e tempo scaduto) */
+.gate {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #173763;
+    /* entra scorrendo da destra */
+    animation: gate-in 0.45s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+/* variante "tempo scaduto": sfondo rosso scuro */
+.gate-timeup {
+    background-color: #7a1020;
+}
+
+/* quando esce, scorre verso sinistra */
+.gate-exit {
+    animation: gate-out 0.45s ease both;
+}
+
+@keyframes gate-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes gate-out {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.gate-inner {
+    text-align: center;
+    color: #fff;
+}
+
+.gate-q {
+    font-family: "Anybody", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    color: #56ddff;
+    text-shadow: 4px 4px 0 #000;
+    margin-bottom: 24px;
+}
+
+/* il numero grande al centro (3, 2, 1, VIA!) */
+.gate-count {
+    font-weight: 900;
+    font-size: 10rem;
+    line-height: 1;
+    color: #ffd23f;
+    text-shadow: 6px 6px 0 #000;
+    animation: gate-pop 0.4s ease;
+}
+
+@keyframes gate-pop {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.gate-timeup-text {
+    font-family: "Anybody", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 5px 5px 0 #000;
+}

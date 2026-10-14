@@ -1,0 +1,238 @@
+.plan {
+    width: 96vw;
+    /* quasi tutta la finestra, mappa verso il bordo sinistro */
+    position: relative;
+    left: 50%;
+    margin-left: -48vw;
+    padding: 8px 16px 32px;
+}
+
+.plan-topbar {
+    margin-bottom: 12px;
+}
+
+.plan-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    /* ← le colonne NON sono più obbligate ad altezza uguale */
+    /* niente più height: 78vh */
+}
+
+/* colonna sinistra: mappa + bottone impilati */
+.plan-left {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panel-map {
+    width: 100%;
+    max-width: 830px;
+    margin-top: -3px
+}
+
+.panel-route {
+    flex: 0 0 440px;
+}
+
+.panel {
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    background-color: #0e1416;
+    overflow: hidden;
+}
+
+.panel-head {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 12px 18px;
+    border-bottom: 4px solid #000;
+}
+
+.panel-head-map {
+    background-color: #3f6fb5;
+    color: #fff;
+}
+
+.panel-head-route {
+    background-color: #f99b44;
+    color: #000;
+}
+
+.panel-body {
+    padding: 13px;
+}
+
+.panel-map .panel-body {
+    background-color: #5b6ea8;
+}
+
+.plan-subtitle {
+    color: #56ddff;
+    text-transform: uppercase;
+    margin: 16px 0 8px;
+}
+
+.panel-route .panel-body {
+    padding: 16px;
+}
+
+.panel-bar {
+    height: 8px;
+    border-bottom: 4px solid #000;
+}
+
+.panel-bar-map {
+    background-color: #3f6fb5;
+}
+
+.panel-bar-route {
+    background-color: #f99b44;
+}
+
+.escape-btn {
+    display: block;
+    width: 100%;
+    max-width: 830px;
+    margin-top: 0;
+    /* lo spazio lo dà già il gap di .plan-left */
+    background-color: #56ddff;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.escape-btn:disabled {
+    background-color: #3d494d;
+    /* grigio spento invece dell'azzurro */
+    color: #869397;
+    cursor: not-allowed;
+    /* il cursore "vietato" al passaggio del mouse */
+    transform: none;
+    /* niente ingrandimento */
+    filter: none;
+    /* niente schiaritura */
+}
+
+.escape-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.01);
+}
+
+.escape-btn:active {
+    transform: translate(8px, 8px);
+    box-shadow: none;
+}
+
+@media (max-width: 900px) {
+    /* la pagina occupa tutta la larghezza della finestra, con poco padding: così la mappa è grande */
+    .plan {
+        width: 100vw;
+        margin-left: -50vw;
+        padding: 8px 8px 24px;
+    }
+
+    .plan-grid {
+        flex-direction: column;
+    }
+
+    .panel-route {
+        flex-basis: auto;
+    }
+
+    /* a colonne impilate la mappa e il bottone occupano tutta la larghezza */
+    .panel-map,
+    .escape-btn {
+        max-width: 100%;
+    }
+
+    /* meno bordo interno attorno alla mappa, per ingrandirla ancora */
+    .panel-map .panel-body {
+        padding: 6px;
+    }
+}
+
+.tract-scroll {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 0;
+}
+
+/* ===== Tutorial guidato ===== */
+/* contenitore che avvolge solo la mappa (per posizionare le frecce in % sul viewBox) */
+.map-wrap {
+    position: relative;
+    line-height: 0;
+}
+
+/* pannello "illuminato": viene alzato sopra lo sfondo scuro dell'overlay del tutorial */
+.tut-lit {
+    position: relative;
+    z-index: 2001;
+    box-shadow: 0 0 0 4px #56ddff, 0 0 26px 6px rgba(86, 221, 255, 0.55), 8px 8px 0 0 rgba(0, 0, 0, 1);
+}
+
+/* freccia che indica una stazione sulla mappa */
+.tut-arrow {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    z-index: 6;
+    pointer-events: none;
+    animation: tut-bounce 0.9s ease-in-out infinite;
+}
+
+.tut-arrow-label {
+    background-color: #39ff14;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    line-height: 1.1;
+    padding: 2px 10px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.tut-arrow .bi {
+    color: #39ff14;
+    font-size: 2rem;
+    line-height: 1;
+    text-shadow: 0 0 3px #000, 2px 2px 0 #000;
+}
+
+.tut-arrow-arr .tut-arrow-label {
+    background-color: #ff5cc6;
+}
+
+.tut-arrow-arr .bi {
+    color: #ff5cc6;
+}
+
+@keyframes tut-bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, -100%);
+    }
+
+    50% {
+        transform: translate(-50%, -120%);
+    }
+}

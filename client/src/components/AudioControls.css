@@ -1,0 +1,35 @@
+/* comando musica flottante in basso a destra (durante la partita) */
+.audio-controls {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #1a2123;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 999px;
+    padding: 8px 14px;
+}
+
+.audio-btn {
+    background: transparent;
+    border: none;
+    color: #56ddff;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.audio-btn:hover {
+    color: #ffc08c;
+}
+
+.audio-volume {
+    width: 90px;
+    accent-color: #56ddff;
+    cursor: pointer;
+}

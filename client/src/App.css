@@ -1,0 +1,30 @@
+body {
+  background-color: #173763;
+  /* sfondo blu della pagina */
+  color: #dee3e6;
+  /* testo chiaro su sfondo scuro */
+  font-family: "Hanken Grotesk", sans-serif;
+  overflow-x: hidden;
+  /* evita lo scroll orizzontale causato dagli elementi a tutta larghezza */
+}
+
+/* il contenuto dell'app sta sopra lo sfondo decorativo della metro */
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* transizione tra le pagine: una breve dissolvenza a ogni cambio rotta */
+.page-fade {
+  animation: page-fade-in 0.32s ease;
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

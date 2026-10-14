@@ -1,0 +1,301 @@
+.navheader {
+    background-color: #1a2123;
+    border-bottom: 4px solid #000000;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 1);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.navheader-brand {
+    color: #56ddff !important;
+    font-style: italic;
+    font-family: "Anybody", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    font-size: 1.6rem;
+}
+
+.btn-neo {
+    border: 3px solid #000000 !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+}
+
+.btn-neo:hover {
+    filter: brightness(1.1);
+}
+
+.navheader-user {
+    font-weight: 700;
+    color: #dee3e6;
+}
+
+.avatar-btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    background-color: #ffc08c;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: all 0.1s ease;
+}
+
+.avatar-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.avatar-btn:hover {
+    filter: brightness(1.1);
+}
+
+.avatar-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.phase-badge {
+    display: inline-block;
+    margin-left: 14px;
+    transform: rotate(-3deg);
+    /* leggermente storto */
+    background-color: #1a2123;
+    /* sfondo scuro */
+    color: #ff2b2b;
+    /* rosso acceso */
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border: 3px solid #ff2b2b;
+    /* bordo rosso */
+    border-radius: 0;
+    /* quadrato */
+    text-shadow: 0 0 8px rgba(255, 43, 43, 0.8);
+    /* alone "accecante" */
+}
+
+.navheader-timer {
+    margin-left: 16px;
+}
+
+.navheader-timer .timer {
+    font-size: 1.6rem;
+    padding: 2px 12px;
+}
+
+/* ===== Icona casetta + menu laterale ===== */
+.nav-menu-btn {
+    background: transparent;
+    border: none;
+    color: #56ddff;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 4px 9px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+.nav-menu-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* quando il menu è aperto l'icona cambia colore */
+.nav-menu-btn-open {
+    color: #ffc08c;
+    background-color: rgba(255, 192, 140, 0.18);
+}
+
+.nav-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1200;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    max-width: 80vw;
+    background-color: #1a2123;
+    border-right: 4px solid #000;
+    box-shadow: 8px 0 0 0 rgba(0, 0, 0, 0.4);
+    z-index: 1201;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: nav-menu-in 0.2s ease;
+}
+
+@keyframes nav-menu-in {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.nav-menu-title {
+    color: #56ddff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    padding: 4px 8px 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #252b2d;
+    color: #dee3e6;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
+    padding: 12px 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.nav-menu-item i {
+    color: #56ddff;
+    font-size: 1.2rem;
+}
+
+.nav-menu-item:hover {
+    background-color: #2e3739;
+    transform: translateX(4px);
+}
+
+.nav-menu-item:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+}
+
+/* la voce della pagina in cui ti trovi: bordo e icona piena evidenziati */
+.nav-menu-item-active {
+    border-color: #56ddff;
+    color: #fff;
+}
+
+/* ===== Badge "!" del nuovo livello ===== */
+.avatar-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.levelup-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background-color: #ff2b2b;
+    color: #fff;
+    border: 2px solid #000;
+    font-weight: 900;
+    font-size: 0.8rem;
+    line-height: 16px;
+    text-align: center;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+    animation: badge-pulse 1s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+/* lo stesso badge dentro la voce "Profilo" del menu */
+.levelup-badge-menu {
+    position: static;
+    margin-left: auto;
+}
+
+/* la parte destra della barra resta in riga (Bootstrap altrimenti la incolonna su schermi piccoli) */
+.navheader-right {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* ===== Schermi piccoli ===== */
+@media (max-width: 992px) {
+    .navheader-user {
+        /* nasconde "Ciao, nome" per non mandare a capo la barra */
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navheader-brand {
+        font-size: 1.05rem;
+    }
+
+    .nav-menu-btn {
+        font-size: 1.2rem;
+        margin-right: 6px;
+        padding: 4px 6px;
+    }
+
+    .phase-badge {
+        /* su schermi piccoli si nasconde, per fare spazio nella barra */
+        display: none;
+    }
+
+    .navheader-timer {
+        margin-left: 8px;
+    }
+
+    .navheader-timer .timer {
+        font-size: 1.05rem;
+        padding: 2px 8px;
+    }
+
+    .btn-neo {
+        font-size: 0.72rem;
+        padding: 4px 8px;
+    }
+
+    .avatar-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-menu {
+        width: 220px;
+    }
+}

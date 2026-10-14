@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#173763"/>
+  <!-- corpo del treno della metro -->
+  <rect x="15" y="11" width="34" height="34" rx="11" fill="#56ddff" stroke="#000" stroke-width="3"/>
+  <!-- parabrezza -->
+  <rect x="20" y="17" width="24" height="10" rx="4" fill="#0e1416"/>
+  <!-- fari -->
+  <circle cx="23" cy="37" r="3.2" fill="#ffd23f"/>
+  <circle cx="41" cy="37" r="3.2" fill="#ffd23f"/>
+  <!-- carrelli -->
+  <rect x="21" y="45" width="5" height="7" fill="#56ddff"/>
+  <rect x="38" y="45" width="5" height="7" fill="#56ddff"/>
+  <!-- binario -->
+  <rect x="11" y="53" width="42" height="4" rx="2" fill="#3d494d"/>
+</svg>

@@ -1,0 +1,169 @@
+.login {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    /* niente align-items/justify-content: center -> con margin auto la card si centra
+       ma, se è più alta dello schermo, si può scorrere fino in cima senza tagli */
+    padding: 48px 16px;
+    overflow-y: auto;
+    background-color: #56ddff;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
+    background-size: 28px 28px;
+}
+
+.login-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    background-color: #ffffff;
+    border: 4px solid #000;
+    box-shadow: 12px 12px 0 0 rgba(0, 0, 0, 1);
+    padding: 48px 32px 32px;
+}
+
+.login-ribbon {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    background-color: #ff3b30;
+    color: #ffffff;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
+    padding: 8px 24px;
+    font-family: "Anybody", sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    margin: 8px 0 24px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+
+.login-input-wrap {
+    position: relative;
+}
+
+.login-input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.login-input {
+    width: 100%;
+    border: 4px solid #000 !important;
+    border-radius: 0 !important;
+    padding: 12px 16px 12px 44px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+.login-input:focus {
+    border-color: #56ddff !important;
+    box-shadow: 0 0 0 4px rgba(86, 221, 255, 0.5) !important;
+    outline: none !important;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #39ff14 !important;
+    color: #000 !important;
+    border: 4px solid #000 !important;
+    border-radius: 0 !important;
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    font-size: 1.2rem !important;
+    padding: 14px !important;
+    margin-top: 8px;
+    transition: all 0.1s ease;
+}
+
+.login-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    background-color: #39ff14 !important;
+}
+
+.login-btn:active {
+    filter: brightness(1.15);
+    transform: scale(1.08);
+}
+
+/* riga "Non hai un account? Registrati" / "Hai già un account? Accedi" */
+.login-switch {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #000;
+    font-weight: 600;
+}
+
+.login-switch a {
+    color: #0a7ea4;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.login-switch a:hover {
+    color: #ff3b30;
+}
+
+/* ===== Occhio per vedere la password (tieni premuto) ===== */
+.login-input-pwd {
+    padding-right: 46px !important;
+    /* spazio per l'icona a destra */
+}
+
+.login-eye {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+.login-eye:hover {
+    color: #0a7ea4;
+}

@@ -1,0 +1,444 @@
+.profile {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+}
+
+/* ===== Intestazione ===== */
+.profile-header {
+    position: relative;
+    overflow: hidden;
+    background-color: #1a2123;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 40px 32px 32px;
+    margin-bottom: 32px;
+}
+
+/* barra ciano in alto */
+.profile-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-color: #56ddff;
+    border-bottom: 4px solid #000;
+}
+
+/* sfondo a puntini */
+.profile-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#ffffff 2px, transparent 2px);
+    background-size: 18px 18px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+/* contenuto sopra i puntini */
+.profile-header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+}
+
+/* avatar */
+.profile-avatar {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 6px solid #56ddff;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    overflow: hidden;
+    background-color: #303638;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* blocco testo */
+.profile-info {
+    flex: 1;
+    min-width: 240px;
+}
+
+.profile-status {
+    display: inline-block;
+    background-color: #24c1e3;
+    color: #00343f;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 4px 14px;
+    border: 3px solid #000;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.profile-name {
+    color: #ffffff;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-shadow: 3px 3px 0 #000;
+    margin: 0 0 12px;
+    word-break: break-word;
+}
+
+.profile-tagline {
+    display: inline-block;
+    background-color: #56ddff;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    padding: 6px 16px;
+    transform: skewX(-8deg);
+}
+
+.profile-tagline>span {
+    display: block;
+    transform: skewX(8deg);
+    color: #00343f;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* ===== Statistiche ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background-color: #1a2123;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px);
+}
+
+.stat-icon {
+    font-size: 2.4rem;
+    color: #56ddff;
+    margin-bottom: 12px;
+}
+
+.stat-label {
+    color: #56ddff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 1;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* ===== Bottone ===== */
+.profile-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #56ddff;
+    color: #00343f;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    padding: 18px 40px;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+}
+
+.profile-home-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.profile-home-btn:active {
+    transform: translate(8px, 8px);
+    box-shadow: none;
+}
+
+/* scritta gialla "Nuovo livello raggiunto" sopra la barra */
+.levelup-notice {
+    text-align: center;
+    color: #ffd23f;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    text-shadow: 2px 2px 0 #000;
+    margin-bottom: 12px;
+    animation: levelup-pop 0.5s ease;
+}
+
+@keyframes levelup-pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* livello massimo (20): la scheda diventa dorata e luccica */
+.level-panel-max {
+    background: linear-gradient(120deg, #b8860b, #ffd23f, #fff3b0, #ffd23f, #b8860b);
+    background-size: 200% 100%;
+    border-color: #8a6d00;
+    animation: level-shimmer 3s linear infinite;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1), 0 0 24px rgba(255, 210, 63, 0.7);
+}
+
+@keyframes level-shimmer {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.level-panel-max .level-current,
+.level-panel-max .level-next,
+.level-panel-max .level-bar-caption {
+    color: #3a2e00;
+}
+
+.level-panel-max .level-bar {
+    border-color: #6b5400;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.level-panel-max .level-bar-fill {
+    background: #fff7d6;
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Avanzamento di livello ===== */
+.level-panel {
+    background-color: #1a2123;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+}
+
+.level-panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.level-current {
+    color: #56ddff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.level-next {
+    color: #bcc9ce;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.level-bar {
+    height: 22px;
+    background-color: #0e1416;
+    border: 3px solid #000;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+/* la parte colorata e "illuminata" che rappresenta l'avanzamento */
+.level-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #22e0a0, #56ddff);
+    box-shadow: 0 0 16px rgba(86, 221, 255, 0.8);
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+.level-bar-caption {
+    margin-top: 8px;
+    color: #7b8a95;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===== Cambio avatar: scritta sotto l'immagine + finestra ===== */
+.profile-avatar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.avatar-change-link {
+    background: transparent;
+    border: none;
+    color: #56ddff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.avatar-change-link:hover {
+    color: #ffc08c;
+}
+
+.avatar-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.avatar-modal {
+    background-color: #1a2123;
+    border: 5px solid #000;
+    box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    max-width: 90vw;
+}
+
+.avatar-modal-title {
+    color: #56ddff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.avatar-modal-close {
+    margin-top: 20px;
+    background-color: #3d494d;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 8px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.avatar-modal-close:hover {
+    filter: brightness(1.1);
+}
+
+.avatar-modal-close:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* le opzioni avatar, usate dentro la finestra */
+.avatar-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.avatar-option {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+    overflow: hidden;
+    background-color: #303638;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.1s ease;
+}
+
+.avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.avatar-option:hover {
+    transform: scale(1.06);
+}
+
+.avatar-option-active {
+    border-color: #56ddff;
+    box-shadow: 0 0 0 3px #56ddff, 4px 4px 0 0 rgba(0, 0, 0, 1);
+}
+
+/* ===== Telefono ===== */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-header-content {
+        justify-content: center;
+        text-align: center;
+    }
+}

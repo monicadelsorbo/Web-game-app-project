@@ -1,0 +1,133 @@
+.route-mission {
+    color: #dee3e6;
+    margin-bottom: 12px;
+}
+
+.mission-pill {
+    display: inline-block;
+    font-weight: 800;
+    padding: 2px 10px;
+    border-radius: 6px;
+    border: 2px solid #000;
+}
+
+.mission-dep {
+    background-color: #FFD23F;
+    color: #000;
+}
+
+.mission-arr {
+    background-color: #22E0A0;
+    color: #000;
+}
+
+.mission-arrow {
+    margin: 0 8px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.route-selected {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    min-height: 40px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.route-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.route-empty {
+    color: #7b8a95;
+    font-style: italic;
+}
+
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #252b2d;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 8px 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.route-item-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #56ddff;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-item {
+    cursor: grab;
+}
+
+.route-item:active {
+    cursor: grabbing;
+}
+
+.route-item-text {
+    flex: 1;
+}
+
+/* spinge la X a destra */
+.route-item-dragging {
+    opacity: 0.4;
+}
+
+.route-item-x {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    color: #ff6b6b;
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.route-item-x:hover {
+    color: #ff2b2b;
+}
+
+/* linea che indica dove verrà inserita la tratta trascinata */
+.drop-line {
+    height: 8px;
+    background-color: #56ddff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin: 4px 0;
+    box-shadow: 0 0 12px 2px rgba(86, 221, 255, 0.9);
+    animation: drop-line-pulse 0.7s ease-in-out infinite;
+}
+
+@keyframes drop-line-pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scaleX(0.97);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}

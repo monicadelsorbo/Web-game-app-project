@@ -1,0 +1,463 @@
+.board {
+    width: 96vw;
+    position: relative;
+    left: 50%;
+    margin-left: -48vw;
+    padding: 24px 24px 64px;
+}
+
+/* ===== Podio (primi 3 posti) ===== */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* i blocchi si allineano in basso, le altezze diverse salgono */
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.podium-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    max-width: 30vw;
+}
+
+.podium-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* la coppa sul primo posto */
+.podium-cup {
+    font-size: 3rem;
+    color: #ffd23f;
+    text-shadow: 2px 2px 0 #000;
+    margin-bottom: 4px;
+    animation: cup-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes cup-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.podium-name {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.podium-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #0e1416;
+    color: #56ddff;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* il "gradino" del podio, con il numero della posizione */
+.podium-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 900;
+    font-size: 2.4rem;
+    border: 4px solid #000;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.podium-1 .podium-block {
+    height: 180px;
+    background-color: #ffd23f;
+    /* oro */
+}
+
+.podium-2 .podium-block {
+    height: 140px;
+    background-color: #c0c0c0;
+    /* argento */
+}
+
+.podium-3 .podium-block {
+    height: 110px;
+    background-color: #e08a2b;
+    /* bronzo */
+}
+
+/* evidenzia il gradino dell'utente loggato */
+.podium-col.is-me .podium-block {
+    outline: 3px solid #c46bff;
+    outline-offset: 2px;
+}
+
+/* ===== Aspetto 3D del podio: gradini inclinati con spessore e riflesso ===== */
+.podium {
+    perspective: 900px;
+}
+
+.podium-block {
+    position: relative;
+    transform: rotateX(14deg);
+    transform-origin: bottom center;
+    box-shadow:
+        inset 0 -10px 0 rgba(0, 0, 0, 0.16),
+        0 14px 0 0 rgba(0, 0, 0, 0.35),
+        0 24px 18px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* riflesso luminoso in alto, accentua il 3D */
+.podium-block::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    right: 10px;
+    height: 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.board-title {
+    text-align: center;
+    color: #56ddff;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2.6rem;
+    letter-spacing: -0.01em;
+    text-shadow: 0 0 18px rgba(86, 221, 255, 0.6), 3px 3px 0 #000;
+    margin-bottom: 32px;
+}
+
+.board-title .bi {
+    color: #ffc08c;
+}
+
+.board-panel {
+    background-color: #29b6da;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.board-head {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px 16px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: #06384a;
+}
+
+.board-head-rank {
+    width: 80px;
+}
+
+.board-head-player {
+    flex: 1;
+}
+
+.board-head-loot {
+    margin-left: auto;
+}
+
+.board-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #1a2123;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
+
+.board-badge {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: #000;
+    background-color: #3d494d;
+    border: 2px solid #000;
+}
+
+.board-name {
+    flex: 1;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.board-loot {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0e1416;
+    color: #56ddff;
+    font-weight: 800;
+    padding: 8px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.board-row.rank-1,
+.board-row.rank-2,
+.board-row.rank-3 {
+    padding: 18px 16px;
+}
+
+.board-row.rank-1 {
+    border-left: 8px solid #ffd23f;
+}
+
+.board-row.rank-2 {
+    border-left: 8px solid #c0c0c0;
+}
+
+.board-row.rank-3 {
+    border-left: 8px solid #e08a2b;
+}
+
+.rank-1 .board-badge {
+    background-color: #ffd23f;
+}
+
+.rank-2 .board-badge {
+    background-color: #c0c0c0;
+}
+
+.rank-3 .board-badge {
+    background-color: #e08a2b;
+}
+
+.board-row.is-me,
+.board-row-low.is-me {
+    outline: 3px solid #c46bff;
+    outline-offset: 2px;
+}
+
+.board-empty {
+    text-align: center;
+    color: #06384a;
+    font-weight: 700;
+    padding: 16px;
+}
+
+/* riquadro "la tua posizione" */
+.board-mine {
+    margin-top: 24px;
+    background-color: #173763;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 16px 20px;
+}
+
+.board-mine-label {
+    display: block;
+    color: #c46bff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.board-mine .board-row-low {
+    margin-bottom: 0;
+}
+
+.board-mine-empty {
+    color: #aab8c4;
+    font-style: italic;
+    margin: 0;
+}
+
+/* copia in sovraimpressione, fissata in basso, mostrata finché la riga reale non è visibile */
+.board-mine-float {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    width: min(92vw, 540px);
+    z-index: 1500;
+    background-color: #173763;
+    border: 4px solid #000;
+    box-shadow: 0 10px 26px 4px rgba(0, 0, 0, 0.55), 6px 6px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 12px 18px;
+    animation: board-float-in 0.25s ease;
+}
+
+.board-mine-float .board-mine-label {
+    margin-bottom: 8px;
+}
+
+.board-mine-float .board-row-low {
+    margin-bottom: 0;
+}
+
+@keyframes board-float-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.board-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.board-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #56ddff;
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1);
+    padding: 14px 32px;
+    border-radius: 8px;
+    transition: all 0.1s ease;
+}
+
+.board-home-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.board-home-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: none;
+}
+
+.board-panel-low {
+    background-color: #173763;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 24px;
+}
+
+.board-row-low {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #1a2123;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
+
+.board-row-low:last-child {
+    margin-bottom: 0;
+}
+
+.board-badge-low {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: #294774;
+    border: 2px solid #000;
+}
+
+.board-name-empty {
+    color: #7b8a95;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+}
+
+/* ===== Schermi piccoli: podio più compatto ===== */
+@media (max-width: 640px) {
+    .board-title {
+        font-size: 1.8rem;
+    }
+
+    .podium {
+        gap: 8px;
+    }
+
+    .podium-col {
+        width: 29vw;
+    }
+
+    .podium-cup {
+        font-size: 2rem;
+    }
+
+    .podium-name {
+        font-size: 0.72rem;
+    }
+
+    .podium-score {
+        font-size: 0.72rem;
+        padding: 3px 8px;
+    }
+
+    .podium-block {
+        font-size: 1.6rem;
+    }
+
+    .podium-1 .podium-block {
+        height: 130px;
+    }
+
+    .podium-2 .podium-block {
+        height: 100px;
+    }
+
+    .podium-3 .podium-block {
+        height: 80px;
+    }
+}

@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# File di ambiente o database locali
+server/database.db
+.env
+
+# misc
+client/dist/
+.DS_Store
+Thumbs.db
+Desktop.ini

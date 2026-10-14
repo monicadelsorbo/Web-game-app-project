@@ -1,0 +1,54 @@
+.metro-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* le linee "spente" di sfondo, appena visibili */
+.metro-base polyline {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* il segmento luminoso che viaggia lungo la linea */
+.metro-spark {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60 1600;
+    opacity: 0.55;
+    animation: metro-travel 7s linear infinite;
+}
+
+@keyframes metro-travel {
+    to {
+        stroke-dashoffset: -1660;
+    }
+}
+
+.s1 {
+    stroke: #ffd23f;
+    animation-duration: 7s;
+}
+
+.s2 {
+    stroke: #ff3b5c;
+    animation-duration: 9s;
+}
+
+.s3 {
+    stroke: #2ea6ff;
+    animation-duration: 6s;
+}
+
+.s4 {
+    stroke: #22e0a0;
+    animation-duration: 8s;
+}
